@@ -57,16 +57,17 @@
         </div>
     </nav>
 
-    <!-- 專案 Hero 區塊 (全寬大圖或標題) -->
-    <header class="pt-32 pb-12 md:pt-40 md:pb-20 px-4 bg-bg text-center">
-        <div class="max-w-4xl mx-auto">
-            <p class="text-accent font-medium mb-3 tracking-widest uppercase text-sm fade-in-up">UI Design</p>
-            <h1 class="text-3xl md:text-5xl font-bold mb-6 text-gray-800 fade-in-up delay-100">
+    <!-- 專案 Hero 區塊  -->
+    <header class="relative pt-32 pb-16 md:pt-40 md:pb-24 px-4 bg-bg overflow-hidden">
+        <div class="relative z-10 max-w-4xl mx-auto text-center">
+            <div class="inline-block bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium mb-6 fade-in-up">
+                UI Design
+            </div>
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight fade-in-up delay-100">
                 UI設計作品
             </h1>
-            <p class="text-gray-500 max-w-xl mx-auto fade-in-up delay-200">
-                收錄了過去多年參與的專案。<br>
-                從需求訪談、到介面設計成果。
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto fade-in-up delay-200">
+                收錄了過去多年參與的專案，從需求訪談、到介面設計成果。
             </p>
         </div>
     </header>
@@ -241,6 +242,29 @@
         </div>
 
     </main>
+
+    <!-- 底部導航 -->
+    <section class="bg-bg py-20 border-t border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+            <div class="text-center md:text-left">
+                <a href="project03.html" class="inline-block border-2 border-primary text-primary px-8 py-3 rounded-full font-medium hover:bg-accent hover:text-white hover:border-accent transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>返回上一個作品
+                </a>
+            </div>
+
+            <div class="text-center md:text-right">
+                <p class="text-gray-400 text-sm mb-4 uppercase tracking-widest">Next Project</p>
+                <a href="../index.html#graphic" class="inline-block group">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-2 group-hover:text-accent transition-colors">
+                        更多平面作品
+                    </h3>
+                    <div class="h-0.5 w-0 group-hover:w-full bg-accent transition-all duration-300 md:ml-auto mx-auto"></div>
+                </a>
+            </div>
+
+        </div>
+    </section>
 
     <!-- 簡易 Footer -->
     <footer class="bg-white py-10 border-t border-gray-100">
