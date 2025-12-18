@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>貼圖插畫繪製 | Illustration</title>
+    <link rel="icon" type="image/png" href="/images/myicon.png">
     <!-- 引入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- 引入 Font Awesome -->
@@ -37,18 +38,18 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex-shrink-0">
-                    <a href="./index.html" class="text-xl font-bold tracking-wider hover:text-accent transition-colors">
+                    <a href="/index.html" class="text-xl font-bold tracking-wider hover:text-accent transition-colors">
                         LEE MIN CHEN
                     </a>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="./index.html#portfolio" class="hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors"><i class="fas fa-arrow-left mr-2"></i>回作品列表</a>
+                        <a href="/index.html" class="hover:text-accent px-3 py-2 rounded-md text-sm font-medium transition-colors"><i class="fas fa-arrow-left mr-2"></i>回作品列表</a>
                     </div>
                 </div>
                 <!-- 手機版選單按鈕 -->
                 <div class="md:hidden">
-                    <a href="./index.html" class="text-gray-500 hover:text-primary">
+                    <a href="/index.html" class="text-gray-500 hover:text-primary">
                         <i class="fas fa-times text-xl"></i>
                     </a>
                 </div>
@@ -80,7 +81,7 @@
                 <div class="relative overflow-hidden rounded-lg bg-gray-100 mb-4 cursor-pointer shadow-sm group-hover:shadow-md transition-all" onclick="openModal(this)">
                     <!-- 圖片 -->
                     <div class="aspect-[4/3] bg-gray-200 flex items-center justify-center text-gray-300 relative overflow-hidden">
-                        <img src="./images/graphic/sticker04.jpg" alt="作品名稱" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <img src="images/sticker04.jpg" alt="作品名稱" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         <span class="absolute bottom-2 right-2 text-xs bg-black/50 text-white px-2 py-1 rounded">2025</span>
                     </div>
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 pointer-events-none"></div>
@@ -106,7 +107,7 @@
                 <div class="relative overflow-hidden rounded-lg bg-gray-100 mb-4 cursor-pointer shadow-sm group-hover:shadow-md transition-all" onclick="openModal(this)">
                     <!-- 圖片 -->
                     <div class="aspect-[4/3] bg-gray-200 flex items-center justify-center text-gray-300 relative overflow-hidden">
-                        <img src="./images/graphic/sticker01.jpg" alt="作品名稱" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <img src="images/sticker01.jpg" alt="作品名稱" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         <span class="absolute bottom-2 right-2 text-xs bg-black/50 text-white px-2 py-1 rounded">2019</span>
                     </div>
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 pointer-events-none"></div>
@@ -132,7 +133,7 @@
                 <div class="relative overflow-hidden rounded-lg bg-gray-100 mb-4 cursor-pointer shadow-sm group-hover:shadow-md transition-all" onclick="openModal(this)">
                     <!-- 圖片 -->
                     <div class="aspect-[4/3] bg-gray-200 flex items-center justify-center text-gray-300 relative overflow-hidden">
-                        <img src="./images/graphic/sticker02.jpg" alt="作品名稱" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <img src="images/sticker02.jpg" alt="作品名稱" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         <span class="absolute bottom-2 right-2 text-xs bg-black/50 text-white px-2 py-1 rounded">2020</span>
                     </div>
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 pointer-events-none"></div>
@@ -158,7 +159,7 @@
                 <div class="relative overflow-hidden rounded-lg bg-gray-100 mb-4 cursor-pointer shadow-sm group-hover:shadow-md transition-all" onclick="openModal(this)">
                     <!-- 圖片 -->
                     <div class="aspect-[4/3] bg-gray-200 flex items-center justify-center text-gray-300 relative overflow-hidden">
-                        <img src="./images/graphic/sticker03.jpg" alt="作品名稱" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <img src="images/sticker03.jpg" alt="作品名稱" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                         <span class="absolute bottom-2 right-2 text-xs bg-black/50 text-white px-2 py-1 rounded">2021</span>
                     </div>
                     <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 pointer-events-none"></div>
@@ -270,11 +271,8 @@
             const imgElement = element.querySelector('img');
             
             if (imgElement) {
-                // 如果有 img 標籤，直接使用其 src
                 modalImg.src = imgElement.src;
             } else {
-                // 如果是模板狀態（只有 icon），使用 placeholder 服務生成一張帶有標題的圖片
-                // 這裡僅為了演示效果，讓您知道功能是正常的
                 const bgColor = '333333';
                 const textColor = 'ffffff';
                 const text = encodeURIComponent(titleText);
@@ -302,7 +300,7 @@
             
             setTimeout(() => {
                 modal.classList.add('hidden');
-            }, 300); // 等待 transition 結束
+            }, 300);  // 等待 transition 結束
             
             document.body.style.overflow = '';
         }
