@@ -199,6 +199,29 @@
                 </div>
             </div>
 
+            <!-- 作品卡片 6 -->
+            <div class="group fade-in-up delay-300">
+                <div class="relative overflow-hidden rounded-lg bg-gray-100 mb-4 cursor-pointer shadow-sm group-hover:shadow-md transition-all" data-full="images/shark-poster-process.png" onclick="openModal(this)">
+                    <!-- 圖片 -->
+                    <div class="aspect-[4/3] bg-gray-200 flex items-center justify-center text-gray-300 relative overflow-hidden">
+                        <img src="images/shark-poster.jpg" alt="用黃金圓重構鯊魚｜向卡桑德爾致敬" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <span class="absolute bottom-2 right-2 text-xs bg-black/50 text-white px-2 py-1 rounded">2026</span>
+                    </div>
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 pointer-events-none"></div>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        <span class="bg-white/90 text-gray-800 px-4 py-2 rounded-full shadow-lg text-sm font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                            <i class="fas fa-expand mr-2"></i>查看大圖
+                        </span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-gray-800 group-hover:text-accent transition-colors">
+                        用黃金圓重構鯊魚
+                    </h3>
+                    <p class="text-sm text-gray-500 mt-1">Poster Design｜向卡桑德爾致敬</p>
+                </div>
+            </div>
+
         </div>
 
     </main>
@@ -288,10 +311,13 @@
             const titleText = titleElement ? titleElement.innerText : '作品展示';
             const descText = descElement ? descElement.innerText : '';
 
-            // 2. 抓取圖片
+            // 2. 抓取圖片 (若卡片有 data-full 指定大圖，優先使用；否則用縮圖)
             const imgElement = element.querySelector('img');
-            
-            if (imgElement) {
+            const fullSrc = element.getAttribute('data-full');
+
+            if (fullSrc) {
+                modalImg.src = fullSrc;
+            } else if (imgElement) {
                 modalImg.src = imgElement.src;
             } else {
                 const bgColor = '333333';
