@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>李旻眞｜Minchen Lee · UI/UX ＆ Graphic Designer</title>
+<link rel="icon" type="image/png" href="images/myicon.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: { extend: {
+    colors: {
+      paper: '#E9E9E5', card:'#F4F4F1', ink:'#262626', sub:'#6E6E6B',
+      slate:'#5E7193', slateDk:'#47587A', slateLt:'#93A2BE', cloud:'#C9D1E0'
+    },
+    fontFamily: {
+      sans:['"Noto Sans TC"','sans-serif'],
+      round:['"Baloo 2"','"Noto Sans TC"','cursive'],
+      q:['"Quicksand"','"Noto Sans TC"','sans-serif'],
+      hand:['"Caveat"','cursive']
+    }
+  }}
+}
+</script>
+<style>
+  html{scroll-behavior:smooth}
+  body{background:#E9E9E5}
+  .round{font-family:'Baloo 2','Noto Sans TC',cursive}
+  .outline-num{font-family:'Baloo 2',cursive;color:transparent;-webkit-text-stroke:2px rgba(94,113,147,.22);line-height:.8}
+  .vtext{writing-mode:vertical-rl;letter-spacing:.3em}
+  .softshadow{box-shadow:0 20px 45px -22px rgba(71,88,122,.55)}
+  .reveal{opacity:0;transform:translateY(20px);transition:all .7s cubic-bezier(.16,.84,.44,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal-left{opacity:0;transform:translateX(-64px);transition:opacity .9s ease,transform .9s cubic-bezier(.16,.84,.44,1)}
+  .reveal-left.in{opacity:1;transform:none}
+  .reveal-right{opacity:0;transform:translateX(64px);transition:opacity .9s ease,transform .9s cubic-bezier(.16,.84,.44,1)}
+  .reveal-right.in{opacity:1;transform:none}
+  .pop{opacity:0;transform:scale(.82) translateY(14px);transition:opacity .5s ease,transform .55s cubic-bezier(.34,1.56,.64,1)}
+  .pop.in{opacity:1;transform:none}
+  .doodle{position:absolute;color:#262626;opacity:.5}
+  .pill-hi{background:#5E7193;border-radius:999px;padding:0 .18em;color:#F4F4F1}
+  .circ{border:1.5px solid rgba(94,113,147,.4);border-radius:999px}
+  .wob{animation:wob 7s ease-in-out infinite}
+  @keyframes wob{50%{transform:translateY(-8px) rotate(-2deg)}}
+  .sway{animation:sway 6s ease-in-out infinite;transform-origin:50% 100%}
+  @keyframes sway{0%,100%{transform:rotate(-1.3deg) translateY(0)}50%{transform:rotate(1.3deg) translateY(-6px)}}
+  #mobile-menu{transition:all .25s ease}
+</style>
+</head>
+<body class="font-sans text-ink antialiased selection:bg-slate selection:text-paper overflow-x-hidden">
+
+<!-- NAV -->
+<nav class="fixed top-0 inset-x-0 z-50 px-4 pt-4" id="navbar">
+  <div class="max-w-6xl mx-auto bg-card/85 backdrop-blur softshadow rounded-full h-14 flex items-center justify-between px-5">
+    <a href="#" class="round text-xl font-extrabold flex items-center gap-2">
+      <img src="images/avatar.png" alt="Mindy" class="w-8 h-8 rounded-full object-cover">Minchen
+    </a>
+    <div class="hidden md:flex items-center gap-1 font-q font-semibold text-sub">
+      <a href="#about" class="px-4 py-2 rounded-full hover:bg-cloud/60 hover:text-ink transition">關於</a>
+      <a href="#dowhat" class="px-4 py-2 rounded-full hover:bg-cloud/60 hover:text-ink transition">我會什麼</a>
+      <a href="#work" class="px-4 py-2 rounded-full hover:bg-cloud/60 hover:text-ink transition">精選</a>
+      <a href="#graphic" class="px-4 py-2 rounded-full hover:bg-cloud/60 hover:text-ink transition">平面設計</a>
+      <a href="#contact" class="px-5 py-2 rounded-full bg-ink text-card hover:bg-slate transition">聯絡我</a>
+    </div>
+    <button type="button" onclick="toggleMenu()" class="md:hidden text-xl text-slate"><i class="fas fa-bars"></i></button>
+  </div>
+  <!-- mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden max-w-6xl mx-auto mt-2 bg-card softshadow rounded-3xl p-3 font-q font-semibold text-center text-sub">
+    <a href="#about" onclick="toggleMenu()" class="block px-3 py-2.5 rounded-xl hover:bg-cloud/60 hover:text-ink">關於</a>
+    <a href="#dowhat" onclick="toggleMenu()" class="block px-3 py-2.5 rounded-xl hover:bg-cloud/60 hover:text-ink">我會什麼</a>
+    <a href="#work" onclick="toggleMenu()" class="block px-3 py-2.5 rounded-xl hover:bg-cloud/60 hover:text-ink">精選</a>
+    <a href="#graphic" onclick="toggleMenu()" class="block px-3 py-2.5 rounded-xl hover:bg-cloud/60 hover:text-ink">平面設計</a>
+    <a href="#contact" onclick="toggleMenu()" class="block px-3 py-2.5 rounded-xl bg-ink text-card mt-1">聯絡我</a>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="relative pt-28 md:pt-32 pb-16 px-6 overflow-hidden">
+  <div class="outline-num absolute -left-2 top-56 text-[12rem] md:text-[20rem] select-none pointer-events-none">01</div>
+  <div class="vtext absolute right-4 top-28 text-[11px] font-q font-semibold tracking-widest text-slate hidden md:block">MINDY &nbsp;©&nbsp; 2026</div>
+
+  <div class="max-w-6xl mx-auto grid md:grid-cols-12 gap-8 items-center relative">
+    <div class="md:col-span-7 relative">
+      <i class="doodle fa-solid fa-gear text-2xl" style="left:6%;top:-10px"></i>
+      <i class="doodle fa-solid fa-camera text-xl" style="left:46%;top:-24px"></i>
+      <i class="doodle fa-solid fa-lightbulb text-xl" style="right:8%;top:40px"></i>
+      <i class="doodle fa-solid fa-tag text-lg" style="left:2%;top:150px"></i>
+      <i class="doodle fa-regular fa-pen-to-square text-xl" style="right:18%;top:-12px"></i>
+
+      <span class="font-hand text-slate text-3xl md:text-4xl relative z-10">Creative Visual</span>
+      <h1 class="round font-extrabold leading-[.82] mt-1 relative z-10">
+        <span class="block text-6xl md:text-8xl">
+          <span class="text-slate text-5xl md:text-7xl align-top">“</span>PORT<span class="pill-hi">FO</span>
+        </span>
+        <span class="block text-6xl md:text-8xl mt-1">LIO<span class="text-slate">.</span></span>
+      </h1>
+
+      <!-- 手機版主視覺：縮小放在標題右方 -->
+      <div class="md:hidden absolute top-20 right-0 w-28 z-0">
+        <img src="images/hero-visual.jpg" alt="Mindy 主視覺插畫" class="w-full rounded-2xl softshadow object-cover">
+        <div class="absolute -bottom-2 -left-2 bg-ink text-card font-q font-bold text-[9px] px-2.5 py-1 rounded-full">10+ 年</div>
+      </div>
+
+      <div class="mt-8 flex items-center gap-3 relative z-10">
+        <span class="w-11 h-11 circ grid place-items-center text-slate"><i class="fas fa-arrow-right"></i></span>
+        <div>
+          <div class="round text-xl font-bold leading-none">李旻眞 · Minchen Lee</div>
+          <div class="font-q text-sub text-sm mt-1">UI / UX ＆ Graphic Designer</div>
+        </div>
+      </div>
+
+      <p class="font-hand text-sub text-2xl mt-6 relative z-10">Selected best works until 2026</p>
+
+      <div class="mt-6 flex flex-wrap gap-3 relative z-10">
+        <a href="#work" class="round font-bold inline-flex items-center gap-2 bg-ink text-card px-6 py-3 rounded-full softshadow hover:bg-slate transition hover:-translate-y-0.5">查看作品 <i class="fas fa-arrow-right text-sm"></i></a>
+        <a href="file/李旻眞_履歷.pdf" download="李旻眞_履歷.pdf" class="round font-bold inline-flex items-center gap-2 bg-card text-ink px-6 py-3 rounded-full softshadow hover:bg-cloud/60 transition"><i class="fas fa-download text-sm text-slate"></i> 下載履歷</a>
+      </div>
+    </div>
+
+    <div class="hidden md:flex md:col-span-5 relative justify-center">
+      <div class="circ absolute -left-6 top-6 w-40 h-40 md:w-56 md:h-56 hidden md:block"></div>
+      <div class="relative w-64 md:w-full max-w-sm">
+        <img src="images/hero-visual.jpg" alt="Mindy 主視覺插畫" class="sway w-full rounded-[2.5rem] softshadow object-cover">
+        <div class="absolute -bottom-3 -left-3 bg-ink text-card font-q font-bold text-xs px-4 py-2 rounded-full">10+ 年經驗</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== ABOUT (HELLO) ===== -->
+<section id="about" class="relative py-20 px-6">
+  <div class="outline-num absolute right-0 top-10 text-[12rem] md:text-[18rem] select-none pointer-events-none">02</div>
+  <div class="max-w-6xl mx-auto relative">
+    <div class="flex items-center gap-4 mb-12">
+      <span class="round text-xl font-bold">About</span>
+      <span class="flex-1 h-px bg-slate/30"></span>
+      <span class="w-9 h-9 circ grid place-items-center text-slate"><i class="fas fa-arrow-right text-xs"></i></span>
+    </div>
+
+    <div class="grid md:grid-cols-12 gap-10">
+      <!-- left -->
+      <div class="md:col-span-4 reveal-left">
+        <!-- 桌機版：大照片 + 卡片（直式） -->
+        <div class="hidden md:block">
+          <div class="relative mb-8">
+            <div class="bg-gradient-to-b from-slateLt to-slate rounded-[2.5rem] p-2.5 softshadow">
+              <img src="images/profile.jpg" alt="李旻眞 Mindy 形象照" class="w-full aspect-[4/5] object-cover object-top rounded-[2rem]">
+            </div>
+            <span class="font-hand text-slate text-2xl absolute -right-2 -bottom-3 bg-card px-3 rounded-full softshadow">Hi, I'm Mindy!</span>
+          </div>
+          <div class="bg-slate text-card rounded-[1.8rem] p-6 softshadow">
+            <div class="round font-bold text-lg mb-3">Let's Work Together</div>
+            <div class="space-y-2.5 font-q text-sm">
+              <a href="mailto:minchen2100@gmail.com" class="flex items-center gap-3 hover:text-cloud transition"><i class="fas fa-envelope w-5 text-cloud"></i>minchen2100@gmail.com</a>
+              <div class="flex items-center gap-3"><i class="fas fa-phone w-5 text-cloud"></i>0972-121-323</div>
+              <div class="flex items-center gap-3"><i class="fas fa-map-marker-alt w-5 text-cloud"></i>Kaohsiung, Taiwan</div>
+              <a href="https://www.linkedin.com/in/旻真-李-196738181" target="_blank" class="flex items-center gap-3 hover:text-cloud transition"><i class="fab fa-linkedin-in w-5 text-cloud"></i>LinkedIn</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 手機版：卡片左右排（左:圖+標題 / 右:聯絡資訊） -->
+        <div class="md:hidden bg-slate text-card rounded-[1.8rem] p-5 softshadow">
+          <div class="flex gap-4">
+            <div class="shrink-0 w-28">
+              <img src="images/profile.jpg" alt="李旻眞 Mindy 形象照" class="w-28 h-32 object-cover object-top rounded-2xl ring-2 ring-card/30">
+              <div class="round font-bold text-base leading-tight mt-2.5">Let's Work Together</div>
+              <span class="font-hand text-cloud text-base">Hi, I'm Mindy!</span>
+            </div>
+            <div class="flex-1 self-center space-y-3 font-q text-[13px] min-w-0">
+              <a href="mailto:minchen2100@gmail.com" class="flex items-center gap-2.5 hover:text-cloud transition"><i class="fas fa-envelope w-4 text-cloud shrink-0"></i><span class="break-all">minchen2100@gmail.com</span></a>
+              <div class="flex items-center gap-2.5"><i class="fas fa-phone w-4 text-cloud shrink-0"></i>0972-121-323</div>
+              <div class="flex items-center gap-2.5"><i class="fas fa-map-marker-alt w-4 text-cloud shrink-0"></i>Kaohsiung, Taiwan</div>
+              <a href="https://www.linkedin.com/in/旻真-李-196738181" target="_blank" class="flex items-center gap-2.5 hover:text-cloud transition"><i class="fab fa-linkedin-in w-4 text-cloud shrink-0"></i>LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- right -->
+      <div class="md:col-span-8">
+        <h2 class="reveal-left round font-extrabold text-5xl md:text-6xl mb-5"><span class="text-slate text-4xl align-top">“</span>HELLO<span class="text-slate">.</span></h2>
+        <div class="reveal-left font-q text-sub leading-relaxed space-y-3 max-w-2xl mb-10 text-[15px]">
+          <p>我是 <b class="text-ink">Mindy 旻眞</b>，畢業於大同大學工業設計系，擁有 10 年 UI 介面、使用者體驗與平面設計經驗。從一人設計到團隊型大型專案，從停車 App 到醫療系統，參與多項政府專案型系統、民間企業形象網站、醫療病歷透析系統，以及 SaaS 平台與商城的介面設計。</p>
+          <p>我享受與客戶訪談、釐清需求的過程。現在電子化系統越來越普及，使用者年齡範圍也越來越廣——設計不該只有好看，更要好用。對我來說，從不同視角拆解問題、做出更友善的系統，是一段有趣的腦力激盪；我習慣先梳理使用者流程，再進入視覺與互動設計階段。</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-10">
+          <div class="reveal-left">
+            <div class="round font-bold text-lg mb-3 inline-flex items-center gap-2"><span class="w-5 h-1 bg-slate rounded"></span>Education</div>
+            <div class="mb-6">
+              <div class="font-q font-bold text-sm">工業設計學系</div>
+              <div class="font-q text-sub text-xs">大同大學 · 2012.09 – 2016.06</div>
+            </div>
+            <div class="round font-bold text-lg mb-3 inline-flex items-center gap-2"><span class="w-5 h-1 bg-slate rounded"></span>Experience</div>
+            <ul class="space-y-3">
+              <li><div class="font-q font-bold text-sm">UI/UX 工程師 <span class="text-slate font-normal">· 玩藝國際</span></div><div class="font-q text-sub text-xs">2026.01 – 2026.11</div></li>
+              <li><div class="font-q font-bold text-sm">UI/UX <span class="text-slate font-normal">· 富博科技</span></div><div class="font-q text-sub text-xs">2024.05 – 2025.09</div></li>
+              <li><div class="font-q font-bold text-sm">網頁美工設計師 <span class="text-slate font-normal">· 葳橋資訊</span></div><div class="font-q text-sub text-xs">2018.03 – 2024.03</div></li>
+              <li><div class="font-q font-bold text-sm">UI/UX <span class="text-slate font-normal">· 亞家科技</span></div><div class="font-q text-sub text-xs">2016.09 – 2018.03</div></li>
+              <li><div class="font-q font-bold text-sm">畢製專刊平面組 <span class="text-slate font-normal">· 大同大學</span></div><div class="font-q text-sub text-xs">2015.09 – 2016.05</div></li>
+            </ul>
+          </div>
+          <div class="reveal-right" style="transition-delay:1s">
+            <div class="round font-bold text-lg mb-4 inline-flex items-center gap-2"><span class="w-5 h-1 bg-slate rounded"></span>Skill</div>
+            <div class="grid grid-cols-4 gap-2.5 mb-5">
+              <div class="text-center"><div class="aspect-square bg-card rounded-2xl softshadow p-2.5"><img src="images/logos/figma.svg" alt="Figma" class="w-full h-full object-contain"></div><div class="font-q text-[10px] text-sub mt-1.5">Figma</div></div>
+              <div class="text-center"><div class="aspect-square bg-card rounded-2xl softshadow p-2.5"><img src="images/logos/photoshop.svg" alt="Photoshop" class="w-full h-full object-contain"></div><div class="font-q text-[10px] text-sub mt-1.5">Photoshop</div></div>
+              <div class="text-center"><div class="aspect-square bg-card rounded-2xl softshadow p-2.5"><img src="images/logos/illustrator.svg" alt="Illustrator" class="w-full h-full object-contain"></div><div class="font-q text-[10px] text-sub mt-1.5">Illustrator</div></div>
+              <div class="text-center"><div class="aspect-square bg-card rounded-2xl softshadow p-2.5"><img src="images/logos/xd.svg" alt="Adobe XD" class="w-full h-full object-contain"></div><div class="font-q text-[10px] text-sub mt-1.5">XD</div></div>
+              <div class="text-center"><div class="aspect-square bg-card rounded-2xl softshadow p-2.5"><img src="images/logos/html5.svg" alt="HTML5" class="w-full h-full object-contain"></div><div class="font-q text-[10px] text-sub mt-1.5">HTML</div></div>
+              <div class="text-center"><div class="aspect-square bg-card rounded-2xl softshadow p-2.5"><img src="images/logos/css3.svg" alt="CSS3" class="w-full h-full object-contain"></div><div class="font-q text-[10px] text-sub mt-1.5">CSS</div></div>
+              <div class="text-center"><div class="aspect-square bg-white rounded-2xl softshadow p-2.5 overflow-hidden"><img src="images/logos/capcut.png" alt="CapCut" class="w-full h-full object-contain"></div><div class="font-q text-[10px] text-sub mt-1.5">CapCut</div></div>
+              <div class="text-center"><div class="aspect-square bg-white rounded-2xl softshadow p-2 overflow-hidden"><img src="images/logos/rhino.jpg" alt="Rhino" class="w-full h-full object-contain"></div><div class="font-q text-[10px] text-sub mt-1.5">Rhino</div></div>
+            </div>
+            <div class="space-y-3">
+              <div><div class="flex justify-between font-q text-xs mb-1"><span>UI / UX Design</span><span class="text-sub">85%</span></div><div class="h-1.5 bg-cloud rounded-full"><div class="h-1.5 w-[85%] bg-slate rounded-full"></div></div></div>
+              <div><div class="flex justify-between font-q text-xs mb-1"><span>Graphic Design</span><span class="text-sub">90%</span></div><div class="h-1.5 bg-cloud rounded-full"><div class="h-1.5 w-[90%] bg-slate rounded-full"></div></div></div>
+              <div><div class="flex justify-between font-q text-xs mb-1"><span>Web Frontend</span><span class="text-sub">70%</span></div><div class="h-1.5 bg-cloud rounded-full"><div class="h-1.5 w-[70%] bg-slate rounded-full"></div></div></div>
+            </div>
+            <div class="round font-bold text-lg mt-6 mb-4 inline-flex items-center gap-2"><span class="w-5 h-1 bg-slate rounded"></span>AI Use</div>
+            <div class="grid grid-cols-4 gap-2.5">
+              <div class="text-center"><div class="aspect-square bg-white rounded-2xl softshadow p-2.5 overflow-hidden"><img src="images/logos/claude.svg" alt="Claude" class="w-full h-full object-contain"></div><div class="font-q text-[10px] text-sub mt-1.5">Claude</div></div>
+              <div class="text-center"><div class="aspect-square bg-white rounded-2xl softshadow p-2.5 overflow-hidden"><img src="images/logos/gemini.png" alt="Gemini" class="w-full h-full object-contain"></div><div class="font-q text-[10px] text-sub mt-1.5">Gemini</div></div>
+              <div class="text-center"><div class="aspect-square bg-white rounded-2xl softshadow p-2.5 overflow-hidden"><img src="images/logos/chatgpt.png" alt="ChatGPT" class="w-full h-full object-contain"></div><div class="font-q text-[10px] text-sub mt-1.5">ChatGPT</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT I DO ===== -->
+<section id="dowhat" class="py-16 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-10">
+      <span class="font-hand text-slate text-3xl">what I can do</span>
+      <h2 class="round font-extrabold text-4xl md:text-5xl">我會什麼<span class="text-slate">.</span></h2>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+      <div class="pop bg-gradient-to-b from-slateLt to-slate rounded-[1.8rem] p-6 text-card softshadow hover:-translate-y-1.5 transition" style="transition-delay:0s">
+        <div class="w-14 h-14 rounded-2xl bg-card/15 grid place-items-center text-2xl mb-4"><i class="fas fa-pen-nib"></i></div>
+        <div class="round font-bold text-lg">UI / UX 設計</div>
+        <p class="font-q text-card/80 text-sm mt-1">Web、SaaS 與系統平台介面設計、使用者流程與 IA 規劃。</p>
+      </div>
+      <div class="pop bg-gradient-to-b from-slateLt to-slate rounded-[1.8rem] p-6 text-card softshadow hover:-translate-y-1.5 transition" style="transition-delay:.09s">
+        <div class="w-14 h-14 rounded-2xl bg-card/15 grid place-items-center text-2xl mb-4"><i class="fas fa-palette"></i></div>
+        <div class="round font-bold text-lg">平面設計</div>
+        <p class="font-q text-card/80 text-sm mt-1">品牌識別、包裝、海報與插畫，Photoshop／Illustrator。</p>
+      </div>
+      <div class="pop bg-gradient-to-b from-slateLt to-slate rounded-[1.8rem] p-6 text-card softshadow hover:-translate-y-1.5 transition" style="transition-delay:.18s">
+        <div class="w-14 h-14 rounded-2xl bg-card/15 grid place-items-center text-2xl mb-4"><i class="fas fa-vector-square"></i></div>
+        <div class="round font-bold text-lg">原型 / Prototype</div>
+        <p class="font-q text-card/80 text-sm mt-1">以 Figma 與 AI 工具快速完成 Wireframe、Mockup、互動原型。</p>
+      </div>
+      <div class="pop bg-gradient-to-b from-slateLt to-slate rounded-[1.8rem] p-6 text-card softshadow hover:-translate-y-1.5 transition" style="transition-delay:.27s">
+        <div class="w-14 h-14 rounded-2xl bg-card/15 grid place-items-center text-2xl mb-4"><i class="fas fa-film"></i></div>
+        <div class="round font-bold text-lg">影片 / 剪輯</div>
+        <p class="font-q text-card/80 text-sm mt-1">產品說明影片製作與基礎剪輯，讓介面故事更完整。</p>
+      </div>
+    </div>
+    <!-- checklist -->
+    <div class="bg-card rounded-[2rem] softshadow p-8 md:p-10">
+      <div class="grid sm:grid-cols-2 gap-x-8 gap-y-4 font-q text-[15px]">
+        <div class="flex items-start gap-3"><i class="fas fa-circle-check text-slate mt-1"></i><span>具備多年 UI/UX 設計經驗（Web 或系統平台）</span></div>
+        <div class="flex items-start gap-3"><i class="fas fa-circle-check text-slate mt-1"></i><span>有 Web 和 SaaS 系統設計經驗</span></div>
+        <div class="flex items-start gap-3"><i class="fas fa-circle-check text-slate mt-1"></i><span>使用 Figma 及 Claude 相關工具快速完成 Wireframe、Mockup、Prototype</span></div>
+        <div class="flex items-start gap-3"><i class="fas fa-circle-check text-slate mt-1"></i><span>具備資訊架構（IA）與使用者流程設計能力</span></div>
+        <div class="flex items-start gap-3"><i class="fas fa-circle-check text-slate mt-1"></i><span>良好溝通能力，積極主動與工程團隊合作提出方案</span></div>
+        <div class="flex items-start gap-3"><i class="fas fa-circle-check text-slate mt-1"></i><span>參與系統功能規劃設計</span></div>
+        <div class="flex items-start gap-3"><i class="fas fa-circle-check text-slate mt-1"></i><span>具備產品說明介紹影片製作和基礎剪輯能力</span></div>
+        <div class="flex items-start gap-3"><i class="fas fa-circle-check text-slate mt-1"></i><span>具備基本網頁樣式概念（HTML / CSS）</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WORK ===== -->
+<section id="work" class="relative py-16 px-6">
+  <div class="outline-num absolute left-0 bottom-0 text-[12rem] md:text-[18rem] select-none pointer-events-none">03</div>
+  <div class="max-w-6xl mx-auto relative">
+    <div class="flex items-center gap-4 mb-12">
+      <span class="round text-xl font-bold">Selected Works</span>
+      <span class="flex-1 h-px bg-slate/30"></span>
+      <span class="font-q text-sub text-sm">精選作品</span>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <a href="project/project01.html" class="group bg-card rounded-[1.6rem] overflow-hidden softshadow hover:-translate-y-1.5 transition reveal">
+        <div class="h-48 overflow-hidden"><img src="project/images/project01/醫療系統.jpg" alt="醫學中心醫療系統" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"></div>
+        <div class="p-5">
+          <div class="flex gap-2 mb-2 font-q text-xs"><span class="bg-slate text-card px-2.5 py-1 rounded-full font-bold">Web</span><span class="bg-cloud px-2.5 py-1 rounded-full text-ink">Medical</span></div>
+          <div class="flex items-center justify-between gap-2">
+            <h3 class="round text-xl font-bold group-hover:text-slate transition">醫學中心醫療系統</h3>
+            <span class="w-9 h-9 rounded-full bg-slate/10 text-slate grid place-items-center shrink-0 group-hover:bg-slate group-hover:text-card transition"><i class="fas fa-arrow-right text-sm group-hover:-rotate-45 transition"></i></span>
+          </div>
+          <p class="font-q text-sub text-sm mt-1">行政系統大改版，紙本流程電子化。</p>
+        </div>
+      </a>
+      <a href="project/project02.html" class="group bg-card rounded-[1.6rem] overflow-hidden softshadow hover:-translate-y-1.5 transition reveal">
+        <div class="h-48 overflow-hidden"><img src="project/images/project02/rentApp.png" alt="租品 APP" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"></div>
+        <div class="p-5">
+          <div class="flex gap-2 mb-2 font-q text-xs"><span class="bg-slate text-card px-2.5 py-1 rounded-full font-bold">App</span><span class="bg-cloud px-2.5 py-1 rounded-full text-ink">Mall</span></div>
+          <div class="flex items-center justify-between gap-2">
+            <h3 class="round text-xl font-bold group-hover:text-slate transition">租品 APP</h3>
+            <span class="w-9 h-9 rounded-full bg-slate/10 text-slate grid place-items-center shrink-0 group-hover:bg-slate group-hover:text-card transition"><i class="fas fa-arrow-right text-sm group-hover:-rotate-45 transition"></i></span>
+          </div>
+          <p class="font-q text-sub text-sm mt-1">協助租用產品公司開發租品 App。</p>
+        </div>
+      </a>
+      <a href="project/project03.html" class="group bg-card rounded-[1.6rem] overflow-hidden softshadow hover:-translate-y-1.5 transition reveal">
+        <div class="h-48 overflow-hidden"><img src="project/images/project03/hsogovWeb.png" alt="政府機構相關網站" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"></div>
+        <div class="p-5">
+          <div class="flex gap-2 mb-2 font-q text-xs"><span class="bg-slate text-card px-2.5 py-1 rounded-full font-bold">Web</span><span class="bg-cloud px-2.5 py-1 rounded-full text-ink">Official</span></div>
+          <div class="flex items-center justify-between gap-2">
+            <h3 class="round text-xl font-bold group-hover:text-slate transition">政府機構相關網站</h3>
+            <span class="w-9 h-9 rounded-full bg-slate/10 text-slate grid place-items-center shrink-0 group-hover:bg-slate group-hover:text-card transition"><i class="fas fa-arrow-right text-sm group-hover:-rotate-45 transition"></i></span>
+          </div>
+          <p class="font-q text-sub text-sm mt-1">無障礙體驗設計，協助使用者快速瀏覽。</p>
+        </div>
+      </a>
+      <a href="project/project05.html" class="group bg-card rounded-[1.6rem] overflow-hidden softshadow hover:-translate-y-1.5 transition reveal">
+        <div class="h-48 overflow-hidden"><img src="project/images/project05/hero.jpg" alt="直播電商商城" class="w-full h-full object-cover object-top group-hover:scale-110 transition duration-500"></div>
+        <div class="p-5">
+          <div class="flex gap-2 mb-2 font-q text-xs"><span class="bg-slate text-card px-2.5 py-1 rounded-full font-bold">Web</span><span class="bg-cloud px-2.5 py-1 rounded-full text-ink">Live Commerce</span></div>
+          <div class="flex items-center justify-between gap-2">
+            <h3 class="round text-xl font-bold group-hover:text-slate transition">直播電商商城</h3>
+            <span class="w-9 h-9 rounded-full bg-slate/10 text-slate grid place-items-center shrink-0 group-hover:bg-slate group-hover:text-card transition"><i class="fas fa-arrow-right text-sm group-hover:-rotate-45 transition"></i></span>
+          </div>
+          <p class="font-q text-sub text-sm mt-1">前台改版原型，涵蓋首頁、商品、購物車與結帳流程。</p>
+        </div>
+      </a>
+      <a href="project/project04.html" class="group bg-gradient-to-b from-slateLt to-slate rounded-[1.6rem] p-6 text-card softshadow hover:-translate-y-1.5 transition grid place-items-center text-center reveal md:col-span-2 lg:col-span-1">
+        <div>
+          <div class="w-14 h-14 rounded-full bg-card/15 grid place-items-center text-2xl mx-auto mb-3"><i class="fas fa-layer-group"></i></div>
+          <div class="round font-bold text-xl">查看更多<br>UI 作品</div>
+          <div class="font-q text-card/80 text-sm mt-1">登入頁、排程、看板等介面</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GRAPHIC DESIGN ===== -->
+<section id="graphic" class="py-16 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-10">
+      <span class="font-hand text-slate text-3xl">graphic design</span>
+      <h2 class="round font-extrabold text-4xl md:text-5xl">平面設計<span class="text-slate">.</span></h2>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <a href="graphic/graphic01.html" class="group bg-card rounded-[1.6rem] overflow-hidden softshadow hover:-translate-y-1.5 transition reveal">
+        <div class="h-60 overflow-hidden"><img src="images/g1.png" alt="品牌識別設計" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"></div>
+        <div class="p-5">
+          <span class="font-q text-xs font-bold text-slate tracking-wider uppercase">Brand Identity</span>
+          <div class="flex items-center justify-between gap-2 mt-0.5">
+            <h3 class="round text-xl font-bold group-hover:text-slate transition">品牌識別設計</h3>
+            <span class="w-9 h-9 rounded-full bg-slate/10 text-slate grid place-items-center shrink-0 group-hover:bg-slate group-hover:text-card transition"><i class="fas fa-arrow-right text-sm group-hover:-rotate-45 transition"></i></span>
+          </div>
+        </div>
+      </a>
+      <a href="graphic/graphic02.html" class="group bg-card rounded-[1.6rem] overflow-hidden softshadow hover:-translate-y-1.5 transition reveal">
+        <div class="h-60 overflow-hidden"><img src="images/g2.png" alt="包裝/海報設計" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"></div>
+        <div class="p-5">
+          <span class="font-q text-xs font-bold text-slate tracking-wider uppercase">Packaging ＋ Poster</span>
+          <div class="flex items-center justify-between gap-2 mt-0.5">
+            <h3 class="round text-xl font-bold group-hover:text-slate transition">包裝/海報設計</h3>
+            <span class="w-9 h-9 rounded-full bg-slate/10 text-slate grid place-items-center shrink-0 group-hover:bg-slate group-hover:text-card transition"><i class="fas fa-arrow-right text-sm group-hover:-rotate-45 transition"></i></span>
+          </div>
+        </div>
+      </a>
+      <a href="graphic/graphic03.html" class="group bg-card rounded-[1.6rem] overflow-hidden softshadow hover:-translate-y-1.5 transition reveal">
+        <div class="h-60 overflow-hidden"><img src="images/g3.png" alt="貼圖插畫繪製" class="w-full h-full object-cover group-hover:scale-110 transition duration-500"></div>
+        <div class="p-5">
+          <span class="font-q text-xs font-bold text-slate tracking-wider uppercase">Illustration</span>
+          <div class="flex items-center justify-between gap-2 mt-0.5">
+            <h3 class="round text-xl font-bold group-hover:text-slate transition">貼圖插畫繪製</h3>
+            <span class="w-9 h-9 rounded-full bg-slate/10 text-slate grid place-items-center shrink-0 group-hover:bg-slate group-hover:text-card transition"><i class="fas fa-arrow-right text-sm group-hover:-rotate-45 transition"></i></span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<footer id="contact" class="mt-10 px-6 pb-8">
+  <div class="max-w-6xl mx-auto bg-ink text-card rounded-[2.5rem] softshadow p-12 md:p-16 text-center relative overflow-hidden">
+    <i class="doodle fa-solid fa-star text-cloud text-xl" style="left:10%;top:18%;opacity:.3"></i>
+    <i class="doodle fa-solid fa-heart text-cloud text-lg" style="right:12%;top:30%;opacity:.3"></i>
+    <span class="font-hand text-slateLt text-3xl">let's work together</span>
+    <h2 class="round font-extrabold text-4xl md:text-6xl mt-1">一起合作吧<span class="text-slateLt">.</span></h2>
+    <p class="font-q text-cloud/80 mt-4 max-w-lg mx-auto">如果您有任何合作機會或想進一步了解我的作品，歡迎隨時與我聯繫。</p>
+    <a href="mailto:minchen2100@gmail.com" class="round inline-block mt-7 bg-card text-ink text-lg md:text-2xl font-bold px-8 py-3.5 rounded-full hover:bg-slate hover:text-card transition">minchen2100@gmail.com</a>
+    <div class="mt-8 flex justify-center gap-3">
+      <a href="https://www.linkedin.com/in/旻真-李-196738181" target="_blank" class="w-11 h-11 bg-card/10 rounded-full grid place-items-center hover:bg-slate transition"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:minchen2100@gmail.com" class="w-11 h-11 bg-card/10 rounded-full grid place-items-center hover:bg-slate transition"><i class="fas fa-envelope"></i></a>
+    </div>
+    <div class="mt-8 font-q text-cloud/60 text-sm">Kaohsiung, Taiwan · 0972-121-323 · © 2026 Minchen Lee. Designed & Built by Minchen Lee.</div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mobile-menu').classList.toggle('hidden');}
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){const t=x.target;t.classList.add('in');io.unobserve(t);if(t.style.transitionDelay){setTimeout(()=>{t.style.transitionDelay='0s'},1000)}}}),{threshold:.14});
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .pop').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

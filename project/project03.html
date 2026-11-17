@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>政府機構相關網站 | Government Web</title>
+    <link rel="icon" type="image/png" href="/images/myicon.png">
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+    <script>
+        tailwind.config = {
+          theme: { extend: {
+            colors: {
+              paper:'#E9E9E5', card:'#F4F4F1', ink:'#262626', sub:'#6E6E6B',
+              slate:'#5E7193', slateDk:'#47587A', slateLt:'#93A2BE', cloud:'#C9D1E0',
+              // 相容別名：舊內容用到的這些也指向新色
+              primary:'#262626', accent:'#5E7193', bg:'#E9E9E5'
+            },
+            fontFamily: {
+              sans:['"Noto Sans TC"','sans-serif'],
+              round:['"Baloo 2"','"Noto Sans TC"','cursive'],
+              q:['"Quicksand"','"Noto Sans TC"','sans-serif'],
+              hand:['"Caveat"','cursive']
+            }
+          }}
+        }
+    </script>
+
+    <style>
+      html{scroll-behavior:smooth}
+      body{background:#E9E9E5}
+      .round{font-family:'Baloo 2','Noto Sans TC',cursive}
+      .outline-num{font-family:'Baloo 2',cursive;color:transparent;-webkit-text-stroke:2px rgba(94,113,147,.22);line-height:.8}
+      .vtext{writing-mode:vertical-rl;letter-spacing:.3em}
+      .softshadow{box-shadow:0 20px 45px -22px rgba(71,88,122,.55)}
+      .fade-in-up{opacity:1 !important}
+      .circ{border:1.5px solid rgba(94,113,147,.4);border-radius:999px}
+    </style>
+</head>
+<body class="font-sans text-ink antialiased selection:bg-slate selection:text-paper overflow-x-hidden">
+
+    <!-- 導航列  -->
+    <nav class="fixed top-0 inset-x-0 z-50 px-4 pt-4">
+      <div class="max-w-6xl mx-auto bg-card/85 backdrop-blur softshadow rounded-full h-14 flex items-center justify-between px-5">
+        <a href="../index.html" class="round text-xl font-extrabold flex items-center gap-2"><img src="../images/avatar.png" alt="Mindy" class="w-8 h-8 rounded-full object-cover">Minchen</a>
+        <a href="../index.html" class="round font-bold inline-flex items-center gap-2 bg-ink text-card px-5 py-2 rounded-full hover:bg-slate transition text-sm"><i class="fas fa-arrow-left"></i> 回首頁</a>
+      </div>
+    </nav>
+
+    <!-- 專案 Hero 區塊  -->
+    <header class="relative pt-28 md:pt-32 pb-12 px-6 overflow-hidden">
+      <img src="images/project03/bg.png" alt="Banner Background" class="absolute inset-0 w-full h-full object-cover object-center opacity-10 z-0 pointer-events-none select-none">
+      <div class="outline-num absolute -left-2 top-24 text-[9rem] md:text-[15rem] select-none pointer-events-none">03</div>
+      <div class="vtext absolute right-4 top-28 text-[11px] font-q font-semibold tracking-widest text-slate hidden md:block">MINDY &nbsp;©&nbsp; 2026</div>
+      <div class="max-w-5xl mx-auto relative">
+        <span class="font-hand text-slate text-3xl">Case Study</span>
+        <div class="mt-1"><span class="inline-block bg-slate text-card px-3 py-1 rounded-full text-xs font-q font-bold tracking-wide">Government / Medical Website</span></div>
+        <h1 class="round font-extrabold text-4xl md:text-6xl mt-3 leading-tight">衛生福利部醫福會官網改版<span class="text-slate">.</span></h1>
+        <p class="font-q text-sub text-lg max-w-2xl mt-4">整合轄下 26 家部立醫院與社福機構資訊，打造符合 Web Accessibility 無障礙規範的現代化服務入口。</p>
+      </div>
+    </header>
+
+    <!-- 專案資訊看板 (Role, Date, Tools) -->
+    <section class="px-6">
+        <div class="max-w-5xl mx-auto bg-card rounded-[2rem] softshadow px-8 py-6 -mt-2">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center md:text-left">
+                <div>
+                    <h4 class="text-xs font-q font-bold text-slate uppercase tracking-wider mb-1">角色</h4>
+                    <p class="round font-bold">UI / UX Designer</p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-q font-bold text-slate uppercase tracking-wider mb-1">時間軸</h4>
+                    <p class="round font-bold">2023.06 - 2023.11</p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-q font-bold text-slate uppercase tracking-wider mb-1">客戶</h4>
+                    <p class="round font-bold">衛生福利部醫福會</p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-q font-bold text-slate uppercase tracking-wider mb-1">工具</h4>
+                    <p class="round font-bold">AI, PS, CSS, Html</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 專案內容區塊 -->
+    <article class="max-w-5xl mx-auto px-6 py-20">
+
+        <!-- 主視覺 Mockup -->
+            <div class="mb-24 fade-in-up delay-300">
+            <div class="relative rounded-2xl bg-ink p-2 md:p-4 softshadow mx-auto max-w-4xl">
+                <!-- 螢幕邊框 -->
+                <div class="rounded-xl bg-card overflow-hidden aspect-[16/9] relative">
+                    <img src="images/project03/project03.png" alt="Mobile" class="w-full h-auto object-cover">
+                </div>
+            </div>
+            <p class="text-center text-sm text-slateLt mt-4 font-q">首頁設計預覽 Desktop Preview</p>
+        </div>
+
+        <!-- 專案背景與目標 -->
+        <div class="grid md:grid-cols-3 gap-12 mb-10">
+            <div class="md:col-span-1">
+                <h2 class="round text-2xl font-bold mb-4 sticky top-24 text-slate">專案背景<br><span class="text-slateLt text-lg font-normal">Background</span></h2>
+            </div>
+            <div class="md:col-span-2 prose text-gray-600 leading-relaxed">
+                <p class="mb-6">
+                    「醫福會」負責管理全台 26 家部立醫院與多家社會福利機構。舊版網站面臨資訊架構零散、手機瀏覽體驗不佳，以及不符合最新「無障礙網站 2.1 (AA等級)」規範的問題。。
+                </p>
+            </div>
+        </div>
+
+        <!-- 主要挑戰 -->
+        <div class="grid md:grid-cols-3 gap-12 mb-10">
+            <div class="md:col-span-1">
+                <h2 class="round text-2xl font-bold mb-4 sticky top-24 text-slate">主要挑戰<br><span class="text-slateLt text-lg font-normal">Challenges</span></h2>
+            </div>
+            <div class="md:col-span-2 space-y-8">
+                <!-- 重點 1 -->
+                <div>
+                    <h3 class="round text-xl font-bold mb-2 text-ink">1. 資訊量龐大</h3>
+                    <p class="text-gray-600 mb-4">
+                        需整合醫院管理、社福長照、醫事人員招募等多重業務。
+                    </p>
+                </div>
+                <!-- 重點 2 -->
+                <div>
+                    <h3 class="round text-xl font-bold mb-2 text-ink">2. 使用者年齡層廣</h3>
+                    <p class="text-gray-600 mb-4">
+                        受眾包含高齡長者，字體大小與對比度需特別優化。
+                    </p>
+                </div>
+                <!-- 重點 3 -->
+                <div>
+                    <h3 class="round text-xl font-bold mb-2 text-ink">3. 跨裝置適應</h3>
+                    <p class="text-gray-600 mb-4">
+                        舊版不支援 RWD，需全面重構以適應手機與平板。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 設計重點 -->
+        <div class="grid md:grid-cols-3 gap-12 mb-10">
+            <div class="md:col-span-1">
+                <h2 class="round text-2xl font-bold mb-4 sticky top-24 text-slate">設計重點<br><span class="text-slateLt text-lg font-normal">Highlights</span></h2>
+            </div>
+            <div class="md:col-span-2 space-y-4">
+                 <!-- Card 1 -->
+                 <div class="bg-card p-4 rounded-xl softshadow hover:shadow-md transition-shadow">
+                     <div class="w-12 h-12 bg-slate/10 rounded-xl flex items-center justify-center text-slate mb-6">
+                         <i class="fas fa-sitemap text-xl"></i>
+                     </div>
+                     <h3 class="round text-xl font-bold mb-3">直覺的資訊架構</h3>
+                     <p class="text-gray-500 text-sm leading-relaxed">
+                         透過卡片分類法 (Card Sorting) 重新梳理 Sitemap，將民眾最常用的「找醫院」、「長照服務」提升至首頁顯著位置。
+                     </p>
+                 </div>
+
+                 <!-- Card 2 -->
+                 <div class="bg-card p-4 rounded-xl softshadow hover:shadow-md transition-shadow">
+                     <div class="w-12 h-12 bg-slate/10 rounded-xl flex items-center justify-center text-slate mb-6">
+                         <i class="fas fa-universal-access text-xl"></i>
+                     </div>
+                     <h3 class="round text-xl font-bold mb-3">無障礙友善設計</h3>
+                     <p class="text-gray-500 text-sm leading-relaxed">
+                         全站符合 WCAG 2.1 AA 標準。包含足夠的色彩對比度 (4.5:1)、焦點狀態設計、以及完整的鍵盤導航支援。
+                     </p>
+                 </div>
+
+                 <!-- Card 3 -->
+                 <div class="bg-card p-4 rounded-xl softshadow hover:shadow-md transition-shadow">
+                     <div class="w-12 h-12 bg-slate/10 rounded-xl flex items-center justify-center text-slate mb-6">
+                         <i class="fas fa-mobile-alt text-xl"></i>
+                     </div>
+                     <h3 class="round text-xl font-bold mb-3">RWD 響應式體驗</h3>
+                     <p class="text-gray-500 text-sm leading-relaxed">
+                         針對手機使用者優化操作流程，將傳統的複雜表格轉化為適合小螢幕閱讀的條列式卡片 (List Views)。
+                     </p>
+                 </div>
+             </div>
+        </div>
+
+        <!-- 設計系統展示 (Full Width) -->
+        <div class="py-16 mb-24 bg-card -mx-6 md:-mx-12 rounded-[2rem] softshadow">
+            <div class="max-w-5xl mx-auto px-8">
+                <div class="text-center mb-12">
+                    <span class="text-slate font-q font-bold tracking-widest text-xs uppercase mb-2 block">Design System</span>
+                    <h2 class="round text-3xl font-bold text-ink">色彩與元件系統</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+                    <!-- Color Palette -->
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-24 h-24 rounded-2xl bg-[#98B542] shadow-lg shadow-main/30 flex items-center justify-center text-white font-mono text-sm">
+                                #98B542
+                            </div>
+                            <div>
+                                <h4 class="round font-bold text-lg text-ink">MOHW Green</h4>
+                                <p class="text-gray-500 text-sm">主色調：象徵醫療、健康、生機</p>
+                                <p class="text-xs text-gray-400 mt-1">用於按鈕、連結、重點強調</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-20 h-24 rounded-2xl bg-[#7BBEC7] shadow-lg shadow-secondary/30 flex items-center justify-center text-white font-mono text-sm">
+                                #7BBEC7
+                            </div>
+                            <div class="w-20 h-24 rounded-2xl bg-[#77878B] shadow-lg shadow-secondary/30 flex items-center justify-center text-white font-mono text-sm">
+                                #77878B
+                            </div>
+                            <div>
+                                <h4 class="round font-bold text-lg text-ink">Trust Blue</h4>
+                                <p class="text-gray-500 text-sm">輔助色：象徵專業、管理、信任</p>
+                                <p class="text-xs text-gray-400 mt-1">用於資訊網站入口、Footer、次要按鈕</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Typography & Components -->
+                    <div class="bg-paper p-8 rounded-2xl softshadow">
+                        <!-- Typography -->
+                        <div class="mb-4 border-b border-cloud/40 pb-6">
+                            <h1 class="round text-3xl font-bold text-ink mb-2">Noto Sans TC</h1>
+                            <p class="text-gray-500">思源黑體：清晰易讀，適合資訊型網站</p>
+                        </div>
+                        <!-- UI Components -->
+                        <h3 class="round text-xl font-bold mb-2">Components</h3>
+                        <div>
+                            <div class="mb-8 overflow-hidden rounded-xl bg-card fade-in-up delay-300">
+                                <img src="images/project03/uikit.jpg" alt="UI Kits" class="w-full h-auto object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 查看官網連結 -->
+        <div class="text-center mt-12">
+            <a href="https://www.hso.mohw.gov.tw/iftie/index.php"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="round inline-block bg-slate text-card px-8 py-3 rounded-full font-bold hover:bg-slateDk transition-colors">
+                查看官網<i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+
+    </article>
+
+    <!-- 底部導航 Next Project -->
+    <section class="px-6 mt-10">
+      <div class="max-w-6xl mx-auto bg-ink text-card rounded-[2.5rem] softshadow p-12 md:p-16 text-center">
+        <span class="font-hand text-slateLt text-2xl">next project</span>
+        <a href="project04.html" class="group block"><h3 class="round font-extrabold text-3xl md:text-5xl mt-1 group-hover:text-slateLt transition">更多其他作品 →</h3></a>
+        <div class="mt-8 flex justify-center items-center gap-3">
+          <a href="project02.html" class="round font-bold bg-card/10 text-card px-6 py-2.5 rounded-full hover:bg-slate transition"><i class="fas fa-arrow-left mr-2"></i>返回上一個作品</a>
+          <a href="../index.html" class="round font-bold bg-card text-ink px-6 py-2.5 rounded-full hover:bg-slate hover:text-card transition">回首頁</a>
+          <a href="mailto:minchen2100@gmail.com" class="w-11 h-11 bg-card/10 rounded-full grid place-items-center hover:bg-slate transition"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/旻真-李-196738181" target="_blank" class="w-11 h-11 bg-card/10 rounded-full grid place-items-center hover:bg-slate transition"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="mt-8 font-q text-cloud/60 text-sm">© 2026 Minchen Lee · Kaohsiung, Taiwan</div>
+      </div>
+    </section>
+
+    <div class="h-8"></div>
+</body>
+</html>

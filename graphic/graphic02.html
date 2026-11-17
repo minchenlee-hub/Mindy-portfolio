@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>包裝/海報設計 | Packaging＋Poster</title>
+    <link rel="icon" type="image/png" href="/images/myicon.png">
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+    <script>
+        tailwind.config = {
+          theme: { extend: {
+            colors: {
+              paper:'#E9E9E5', card:'#F4F4F1', ink:'#262626', sub:'#6E6E6B',
+              slate:'#5E7193', slateDk:'#47587A', slateLt:'#93A2BE', cloud:'#C9D1E0',
+              // 相容別名：舊內容用到的這些也指向新色
+              primary:'#262626', accent:'#5E7193', bg:'#E9E9E5'
+            },
+            fontFamily: {
+              sans:['"Noto Sans TC"','sans-serif'],
+              round:['"Baloo 2"','"Noto Sans TC"','cursive'],
+              q:['"Quicksand"','"Noto Sans TC"','sans-serif'],
+              hand:['"Caveat"','cursive']
+            }
+          }}
+        }
+    </script>
+    <style>
+      html{scroll-behavior:smooth}
+      body{background:#E9E9E5}
+      .round{font-family:'Baloo 2','Noto Sans TC',cursive}
+      .outline-num{font-family:'Baloo 2',cursive;color:transparent;-webkit-text-stroke:2px rgba(94,113,147,.22);line-height:.8}
+      .vtext{writing-mode:vertical-rl;letter-spacing:.3em}
+      .softshadow{box-shadow:0 20px 45px -22px rgba(71,88,122,.55)}
+      .fade-in-up{opacity:1 !important}
+      .circ{border:1.5px solid rgba(94,113,147,.4);border-radius:999px}
+    </style>
+</head>
+<body class="font-sans text-ink antialiased selection:bg-slate selection:text-paper overflow-x-hidden">
+
+    <!-- 導航列  -->
+    <nav class="fixed top-0 inset-x-0 z-50 px-4 pt-4">
+      <div class="max-w-6xl mx-auto bg-card/85 backdrop-blur softshadow rounded-full h-14 flex items-center justify-between px-5">
+        <a href="../index.html" class="round text-xl font-extrabold flex items-center gap-2"><img src="../images/avatar.png" alt="Mindy" class="w-8 h-8 rounded-full object-cover">Minchen</a>
+        <a href="../index.html" class="round font-bold inline-flex items-center gap-2 bg-ink text-card px-5 py-2 rounded-full hover:bg-slate transition text-sm"><i class="fas fa-arrow-left"></i> 回首頁</a>
+      </div>
+    </nav>
+
+    <!-- 專案 Hero 區塊  -->
+    <header class="relative pt-28 md:pt-32 pb-12 px-6 overflow-hidden">
+      <div class="outline-num absolute -left-2 top-24 text-[9rem] md:text-[15rem] select-none pointer-events-none">G2</div>
+      <div class="vtext absolute right-4 top-28 text-[11px] font-q font-semibold tracking-widest text-slate hidden md:block">MINDY &nbsp;©&nbsp; 2026</div>
+      <div class="max-w-5xl mx-auto relative">
+        <span class="font-hand text-slate text-3xl">Graphic</span>
+        <div class="mt-1"><span class="inline-block bg-slate text-card px-3 py-1 rounded-full text-xs font-q font-bold tracking-wide">Packaging＋Poster</span></div>
+        <h1 class="round font-extrabold text-4xl md:text-6xl mt-3 leading-tight">包裝/海報設計<span class="text-slate">.</span></h1>
+        <p class="font-q text-sub text-lg max-w-2xl mt-4">收錄了過去參與的包裝及海報設計。</p>
+      </div>
+      <img src="../images/g2bg.jpg" alt="Banner Background" class="absolute inset-0 w-full h-full object-cover object-center opacity-5 -z-10">
+    </header>
+
+    <!-- 作品展示區塊 (Masonry Grid / 網格佈局) -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+        <!-- grid-cols 來排列作品，手機1欄，平板2欄，電腦3欄 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- 作品卡片 1 -->
+             <div class="group fade-in-up delay-300">
+                <div class="relative overflow-hidden rounded-2xl bg-card mb-4 cursor-pointer softshadow transition-all" onclick="openModal(this)">
+                    <!-- 圖片 -->
+                    <div class="aspect-square bg-card flex items-center justify-center text-slateLt relative overflow-hidden">
+                        <img src="images/packaging01.png" alt="作品名稱" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <span class="absolute bottom-2 right-2 text-xs bg-ink/60 text-card px-2 py-1 rounded-full font-q">2025</span>
+                    </div>
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-slate/10 transition-colors duration-300 pointer-events-none"></div>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        <span class="round bg-card/95 text-ink px-4 py-2 rounded-full shadow-lg text-sm font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                            <i class="fas fa-expand mr-2"></i>查看大圖
+                        </span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="round text-lg font-bold text-ink group-hover:text-slate transition-colors">
+                        除蟑包裝 Packaging
+                    </h3>
+                    <p class="text-sm text-gray-500 mt-1 font-q">Logo Design, Packaging</p>
+                </div>
+            </div>
+
+
+            <!-- 作品卡片 2 -->
+            <div class="group fade-in-up delay-300">
+                <div class="relative overflow-hidden rounded-2xl bg-card mb-4 cursor-pointer softshadow transition-all" onclick="openModal(this)">
+                    <!-- 圖片 -->
+                    <div class="aspect-square bg-card flex items-center justify-center text-slateLt relative overflow-hidden">
+                        <img src="images/logo01.png" alt="作品名稱" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <span class="absolute bottom-2 right-2 text-xs bg-ink/60 text-card px-2 py-1 rounded-full font-q">2025</span>
+                    </div>
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-slate/10 transition-colors duration-300 pointer-events-none"></div>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        <span class="round bg-card/95 text-ink px-4 py-2 rounded-full shadow-lg text-sm font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                            <i class="fas fa-expand mr-2"></i>查看大圖
+                        </span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="round text-lg font-bold text-ink group-hover:text-slate transition-colors">
+                        品牌識別及包裝 Packaging
+                    </h3>
+                    <p class="text-sm text-gray-500 mt-1 font-q">Logo Design, Packaging</p>
+                </div>
+            </div>
+
+            <!-- 作品卡片 3 -->
+            <div class="group fade-in-up delay-300">
+                <div class="relative overflow-hidden rounded-2xl bg-card mb-4 cursor-pointer softshadow transition-all" onclick="openModal(this)">
+                    <!-- 圖片 -->
+                    <div class="aspect-[4/3] bg-card flex items-center justify-center text-slateLt relative overflow-hidden">
+                        <img src="images/pg1.png" alt="作品名稱" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <span class="absolute bottom-2 right-2 text-xs bg-ink/60 text-card px-2 py-1 rounded-full font-q">2018</span>
+                    </div>
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-slate/10 transition-colors duration-300 pointer-events-none"></div>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        <span class="round bg-card/95 text-ink px-4 py-2 rounded-full shadow-lg text-sm font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                            <i class="fas fa-expand mr-2"></i>查看大圖
+                        </span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="round text-lg font-bold text-ink group-hover:text-slate transition-colors">
+                        包裝 Packaging
+                    </h3>
+                    <p class="text-sm text-gray-500 mt-1 font-q">Graphic Design, Packaging</p>
+                </div>
+            </div>
+
+            <!-- 作品卡片 4 -->
+            <div class="group fade-in-up delay-300">
+                <div class="relative overflow-hidden rounded-2xl bg-card mb-4 cursor-pointer softshadow transition-all" onclick="openModal(this)">
+                    <!-- 圖片 -->
+                    <div class="aspect-[4/3] bg-card flex items-center justify-center text-slateLt relative overflow-hidden">
+                        <img src="images/post3.png" alt="作品名稱" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <span class="absolute bottom-2 right-2 text-xs bg-ink/60 text-card px-2 py-1 rounded-full font-q">2018</span>
+                    </div>
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-slate/10 transition-colors duration-300 pointer-events-none"></div>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        <span class="round bg-card/95 text-ink px-4 py-2 rounded-full shadow-lg text-sm font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                            <i class="fas fa-expand mr-2"></i>查看大圖
+                        </span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="round text-lg font-bold text-ink group-hover:text-slate transition-colors">
+                        招募海報
+                    </h3>
+                    <p class="text-sm text-gray-500 mt-1 font-q">Graphic Design, Poster</p>
+                </div>
+            </div>
+
+            <!-- 作品卡片 5 -->
+            <div class="group fade-in-up delay-300">
+                <div class="relative overflow-hidden rounded-2xl bg-card mb-4 cursor-pointer softshadow transition-all" onclick="openModal(this)">
+                    <!-- 圖片 -->
+                    <div class="aspect-[4/3] bg-card flex items-center justify-center text-slateLt relative overflow-hidden">
+                        <img src="images/Artboard 1.jpg" alt="作品名稱" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <span class="absolute bottom-2 right-2 text-xs bg-ink/60 text-card px-2 py-1 rounded-full font-q">2018</span>
+                    </div>
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-slate/10 transition-colors duration-300 pointer-events-none"></div>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        <span class="round bg-card/95 text-ink px-4 py-2 rounded-full shadow-lg text-sm font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                            <i class="fas fa-expand mr-2"></i>查看大圖
+                        </span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="round text-lg font-bold text-ink group-hover:text-slate transition-colors">
+                        招募海報
+                    </h3>
+                    <p class="text-sm text-gray-500 mt-1 font-q">Graphic Design, Poster</p>
+                </div>
+            </div>
+
+            <!-- 作品卡片 6 -->
+            <div class="group fade-in-up delay-300">
+                <div class="relative overflow-hidden rounded-2xl bg-card mb-4 cursor-pointer softshadow transition-all" data-full="images/shark-poster-process.png" onclick="openModal(this)">
+                    <!-- 圖片 -->
+                    <div class="aspect-[4/3] bg-card flex items-center justify-center text-slateLt relative overflow-hidden">
+                        <img src="images/shark-poster.jpg" alt="用黃金圓重構鯊魚｜向卡桑德爾致敬" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <span class="absolute bottom-2 right-2 text-xs bg-ink/60 text-card px-2 py-1 rounded-full font-q">2026</span>
+                    </div>
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-slate/10 transition-colors duration-300 pointer-events-none"></div>
+                    <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        <span class="round bg-card/95 text-ink px-4 py-2 rounded-full shadow-lg text-sm font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                            <i class="fas fa-expand mr-2"></i>查看大圖
+                        </span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="round text-lg font-bold text-ink group-hover:text-slate transition-colors">
+                        用黃金圓重構鯊魚
+                    </h3>
+                    <p class="text-sm text-gray-500 mt-1 font-q">Poster Design｜向卡桑德爾致敬</p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- 底部導航 / 其他作品 + 頁尾 -->
+    <section class="px-6 mt-10">
+      <div class="max-w-6xl mx-auto bg-ink text-card rounded-[2.5rem] softshadow p-12 md:p-16 text-center">
+        <span class="font-hand text-slateLt text-2xl">more works</span>
+        <h3 class="round font-extrabold text-3xl md:text-5xl mt-1">想看更多不同類型的作品？</h3>
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+          <a href="graphic01.html" class="round font-bold bg-card text-ink px-6 py-2.5 rounded-full hover:bg-slate hover:text-card transition">品牌識別設計</a>
+          <a href="graphic03.html" class="round font-bold bg-card text-ink px-6 py-2.5 rounded-full hover:bg-slate hover:text-card transition">貼圖插畫繪製</a>
+        </div>
+        <div class="mt-8 flex justify-center gap-3">
+          <a href="../index.html" class="round font-bold bg-card/10 text-card px-6 py-2.5 rounded-full hover:bg-slate hover:text-card transition">回首頁</a>
+          <a href="mailto:minchen2100@gmail.com" class="w-11 h-11 bg-card/10 rounded-full grid place-items-center hover:bg-slate transition"><i class="fas fa-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/旻真-李-196738181" target="_blank" class="w-11 h-11 bg-card/10 rounded-full grid place-items-center hover:bg-slate transition"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="mt-8 font-q text-cloud/60 text-sm">© 2026 Minchen Lee · Kaohsiung, Taiwan</div>
+      </div>
+    </section>
+    <div class="h-8"></div>
+
+    <!-- Image Modal (Lightbox) -->
+    <!-- 預設隱藏，透過 JS 控制顯示 -->
+    <div id="imageModal" class="fixed inset-0 z-[100] hidden bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300 opacity-0" onclick="closeModal()">
+        <div class="relative w-full h-full flex flex-col items-center justify-center" onclick="event.stopPropagation()">
+
+            <!-- 關閉按鈕 -->
+            <button class="absolute top-4 right-4 md:top-8 md:right-8 text-white/70 hover:text-white transition-colors z-50 flex items-center gap-2 group" onclick="closeModal()">
+                <span class="text-sm font-medium group-hover:underline">關閉</span>
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+
+            <!-- 圖片容器 -->
+            <img id="modalImage" src="" alt="Full view" class="max-w-full max-h-[80vh] md:max-h-[85vh] object-contain rounded-sm shadow-2xl animate-zoomIn">
+
+            <!-- 標題說明 -->
+            <div class="mt-6 text-center">
+                <h3 id="modalTitle" class="round text-white text-xl font-bold tracking-wide"></h3>
+                <p id="modalDesc" class="text-gray-400 text-sm mt-2"></p>
+            </div>
+        </div>
+    </div>
+
+        <script>
+        // 簡單的捲動淡入效果
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                        entry.target.style.opacity = '1';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.group, header p, header h1, header p.text-gray-500').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // Modal Functions
+        function openModal(element) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalDesc = document.getElementById('modalDesc');
+
+            // 1. 抓取標題與描述 (假設結構：Card -> Parent -> Next Sibling -> h3/p)
+            // 結構：div(this) -> parent(.group) -> div(text content)
+            const parentGroup = element.parentElement;
+            const titleElement = parentGroup.querySelector('h3');
+            const descElement = parentGroup.querySelector('p');
+
+            const titleText = titleElement ? titleElement.innerText : '作品展示';
+            const descText = descElement ? descElement.innerText : '';
+
+            // 2. 抓取圖片 (若卡片有 data-full 指定大圖，優先使用；否則用縮圖)
+            const imgElement = element.querySelector('img');
+            const fullSrc = element.getAttribute('data-full');
+
+            if (fullSrc) {
+                modalImg.src = fullSrc;
+            } else if (imgElement) {
+                modalImg.src = imgElement.src;
+            } else {
+                const bgColor = '333333';
+                const textColor = 'ffffff';
+                const text = encodeURIComponent(titleText);
+                modalImg.src = `https://placehold.co/1200x800/${bgColor}/${textColor}?text=${text}`;
+            }
+
+            // 3. 設定文字內容
+            modalTitle.innerText = titleText;
+            modalDesc.innerText = descText;
+
+            // 4. 顯示 Modal
+            modal.classList.remove('hidden');
+            // 小延遲讓 opacity transition 生效
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+            }, 10);
+
+            // 禁止背景捲動
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.add('opacity-0');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300); // 等待 transition 結束
+
+            document.body.style.overflow = '';
+        }
+
+        // 支援 ESC 鍵關閉
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
